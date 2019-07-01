@@ -4,6 +4,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './index.css';
 import App from './App';
+import Login from './containers/Login'
+import Profile from './components/Profile'
+import NewStoryForm from './components/NewStoryForm'
+import StoryCollection from './containers/StoryCollection'
+
 import * as serviceWorker from './serviceWorker';
 
 
@@ -17,7 +22,13 @@ const Home = () => {
 
 ReactDOM.render((
   <Router>
-    <App />
+    <React.Fragment>
+      <Route path="/" component={Home}/>
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/stories" component={StoryCollection} />
+      <Route exact path="/stories/new" component={NewStoryForm} />
+    </React.Fragment>
   </Router>),
   document.getElementById('root')
 )
