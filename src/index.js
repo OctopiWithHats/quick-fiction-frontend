@@ -7,7 +7,7 @@ import App from './App';
 import Login from './containers/Login'
 import Profile from './components/Profile'
 import NewStoryForm from './components/NewStoryForm'
-import StoryCollection from './containers/StoryCollection'
+import StoryIndex from './containers/StoryIndex'
 
 import * as serviceWorker from './serviceWorker';
 
@@ -26,7 +26,7 @@ ReactDOM.render((
       <Route path="/" component={Home}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/profile" component={Profile} />
-      <Route exact path="/stories" component={StoryCollection} />
+      <Route exact path="/stories" component={StoryIndex} />
       <Route exact path="/stories/new" component={NewStoryForm} />
     </React.Fragment>
   </Router>),

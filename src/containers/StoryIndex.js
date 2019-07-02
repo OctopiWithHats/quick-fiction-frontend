@@ -1,5 +1,8 @@
 import React from 'react'
 import StoryCollection from './StoryCollection'
+import NewStoryForm from '../components/NewStoryForm'
+
+const API = 'http://localhost:3000/stories'
 
 class StoryIndex extends React.Component{
   //constructor
@@ -12,12 +15,13 @@ class StoryIndex extends React.Component{
 
   //fetch stories in componentDidMount
   componentDidMount(){
-    fetch('http://localhost:3000/api/v1/stories')
-      .then(result => result.json())
-      .then(storyCollection => this.setState({
-        storyCollection: storyCollection
+    fetch(API)
+      .then(response => response.json())
+      .then(stories => this.setState({
+        storyCollection: stories
       })
     )
+    console.log(this.state.storyCollection)
   }
   //add new story
   addStory = story => {
@@ -29,12 +33,15 @@ class StoryIndex extends React.Component{
   //render
   render(){
     console.log(this.state.storyCollection)
-    
+
     return(
       <div>
         <h1>Stories</h1>
         <StoryCollection
           stories={this.state.storyCollection}
+        />
+        <NewStoryForm
+          addStory={this.addStory}
         />
       </div>
     )

@@ -5,7 +5,7 @@ class Story extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      author: this.props.story.user,
+      author: this.props.story.author,
       text: this.props.story.text,
       prompt: this.props.story.prompt
     }

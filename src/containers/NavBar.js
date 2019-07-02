@@ -61,7 +61,7 @@ class NavBar extends React.Component{
         >
           New Story
         </NavLink>
-        
+
         <NavLink
           to="/stories"
           exact
