@@ -10,25 +10,25 @@ class Prompt extends React.Component{
   }
 
   renderRandomBeginning = () => {
-    if(this.props.randomBeginning){
+    if(this.props.beginning){
       //console.log(this.props.randomBeginning.word)
       return(
-        <span>{this.props.randomBeginning.word}</span>
+        <span>{this.props.beginning.word}</span>
       )
     }
   }
 
   renderRandomEnding = () => {
-    if(this.props.randomEnding){
+    if(this.props.ending){
       //console.log(this.props.randomBeginning.word)
       return(
-        <span>{this.props.randomEnding.word}</span>
+        <span>{this.props.ending.word}</span>
       )
     }
   }
 
   render(){
-    console.log("prop beginning", this.props.randomBeginning)
+    console.log("prompt props", this.props)
     return(
       <div>
         <h3>

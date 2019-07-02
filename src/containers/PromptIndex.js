@@ -10,8 +10,8 @@ class PromptIndex extends React.Component{
   constructor(){
     super()
     this.state = {
-      beginnings: [],
-      endings: []
+      beginning: {},
+      ending: []
     }
   }
 
@@ -19,31 +19,59 @@ class PromptIndex extends React.Component{
   componentDidMount(){
     fetch(beginningsAPI)
       .then(response => response.json())
-      .then(beginnings => this.setState({
-        beginnings: beginnings
-      })
+      .then(beginnings => {
+
+        //console.log("beginnings", beginnings)
+
+        let randomIndex = Math.floor(Math.random() * beginnings.length)
+        //console.log("random index", randomIndex)
+        this.setState({
+          beginning: beginnings[randomIndex]
+        })
+      }
     )
 
     fetch(endingsAPI)
       .then(response => response.json())
-      .then(endings => this.setState({
-        endings: endings
-      }))
+      .then(endings => {
+        let randomIndex = Math.floor(Math.random() * endings.length)
+        this.setState({
+          ending: endings[randomIndex]
+        })
+      }
+    )
   }
 
+  // randomBeginning(){
+  //   let beginningArray = this.props.beginnings
+  //   //
+  //   let randomIndex = Math.floor(Math.random() * beginningArray.length)
+  //   //
+  //   return beginningArray[randomIndex]
+  //   // console.log(beginningArray[randomIndex])
+  //
+  // }
 
+  randomEnding(){
+    let endingArray = this.props.endings
+    //
+    let randomIndex = Math.floor(Math.random() * endingArray.length)
+    //
+    return endingArray[randomIndex]
+    // console.log(beginningArray[randomIndex])
+
+  }
 
   //render
   render(){
 
-    // console.log(this.state.beginnings)
-    // console.log(this.state.endings)
+    console.log(this.state)
 
     return(
       <div>
-        <PromptCollection
-          beginnings={this.state.beginnings}
-          endings={this.state.endings}
+        <Prompt
+          beginning={this.state.beginning}
+          ending={this.state.ending}
         />
       </div>
     )
