@@ -8,14 +8,14 @@ import Timer from './Timer'
 // const endingAPI = 'http://localhost:3000/endings'
 
 class NewStoryForm extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = this.getInitialState()
   }
 
   //assigning initial state outside constructor (sort of) allows to access in different places
-  getInitialState = () => ({
+  getInitialState = (props) => ({
     prompt: '',
     author: '',
     text: ''
@@ -58,16 +58,19 @@ class NewStoryForm extends React.Component {
 
   render() {
     //set some abstract consts here for access
+    console.log("new story state", this.state)
     const {prompt, author, text} = this.state
     return (
       <div>
         <Timer />
         <h3>Write a new story!</h3>
         <div>
-          <PromptIndex />
+          <PromptIndex
+            handleChange={this.handleChange}
+          />
         </div>
         <Form onSubmit={this.handleSubmit}>
-          <Form.Button>Start!</Form.Button>
+
           <Form.Group widths="equal">
             <Form.Input
               fluid
@@ -79,7 +82,7 @@ class NewStoryForm extends React.Component {
             />
             <Form.TextArea
 
-              label="text"
+              label=""
               placeholder="Write your story here"
               name="text"
               value={text}

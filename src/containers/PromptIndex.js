@@ -1,6 +1,7 @@
 import React from 'react'
 import PromptCollection from './PromptCollection'
 import Prompt from '../components/Prompt'
+//import NewStoryForm from '../components/NewStoryForm'
 
 const beginningsAPI = 'http://localhost:3000/beginnings'
 const endingsAPI = 'http://localhost:3000/endings'
@@ -11,7 +12,7 @@ class PromptIndex extends React.Component{
     super()
     this.state = {
       beginning: {},
-      ending: []
+      ending: {}
     }
   }
 
@@ -72,7 +73,9 @@ class PromptIndex extends React.Component{
         <Prompt
           beginning={this.state.beginning}
           ending={this.state.ending}
+          handleChange={this.props.handleChange}
         />
+
       </div>
     )
 

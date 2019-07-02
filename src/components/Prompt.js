@@ -1,4 +1,6 @@
 import React from 'react'
+//import NewStoryForm from './NewStoryForm'
+import { Form } from 'semantic-ui-react'
 
 class Prompt extends React.Component{
   //constructor
@@ -27,13 +29,20 @@ class Prompt extends React.Component{
     }
   }
 
+  renderCompletePrompt = () => {
+    let complete = `${this.renderRandomBeginning()} ${this.renderRandomEnding()}`
+
+    return `${complete}`
+  }
+
   render(){
     console.log("prompt props", this.props)
+    console.log("complete prompt", this.renderCompletePrompt())
     return(
       <div>
-        <h3>
-          {this.renderRandomBeginning()} {this.renderRandomEnding()}
-        </h3>
+          <h3 onChange={this.props.handleChange}>
+            {this.renderRandomBeginning()} {this.renderRandomEnding()}
+          </h3>
       </div>
     )
   }
