@@ -7,7 +7,7 @@ class Story extends React.Component{
     this.state = {
       author: this.props.story.author,
       text: this.props.story.text,
-      prompt: this.props.story.prompt
+      //prompt: this.props.story.prompt
     }
   }
 
@@ -16,7 +16,6 @@ class Story extends React.Component{
     return(
       <div>
         <h2>{this.state.author}</h2>
-        <h3>{this.state.prompt}</h3>
         <p>{this.state.text}</p>
       </div>
     )

@@ -1,5 +1,4 @@
 import React from 'react'
-import PromptCollection from './PromptCollection'
 import Prompt from '../components/Prompt'
 //import NewStoryForm from '../components/NewStoryForm'
 

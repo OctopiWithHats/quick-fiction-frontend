@@ -6,8 +6,7 @@ class Timer extends Component {
   constructor(){
     super()
     this.state = {
-      seconds: 3,
-      minutes: 2
+      seconds: 59,
     }
   }
 
@@ -26,9 +25,9 @@ class Timer extends Component {
   whatShows = () => {
     if(this.state.seconds === 0){
       return(
-        <div>
+        <button onSubmit={this.props.handleSubmit}>
           <h2>Time's Up!</h2>
-        </div>
+        </button>
       )
     } else {
       return(

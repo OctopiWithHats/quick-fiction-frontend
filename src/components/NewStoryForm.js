@@ -16,9 +16,8 @@ class NewStoryForm extends React.Component {
 
   //assigning initial state outside constructor (sort of) allows to access in different places
   getInitialState = (props) => ({
-    prompt: '',
-    author: '',
-    text: ''
+    //prompt: '',
+    text: '',
   })
 
   //handle change
@@ -33,7 +32,7 @@ class NewStoryForm extends React.Component {
     //don't forget to prevent default for forms
     event.preventDefault()
     //set const for state for easier value access
-    const {prompt, author, text} = this.state
+    const {text} = this.state
     //fetch request method post
     fetch('http://localhost:3000/stories', {
       //method post
@@ -45,9 +44,10 @@ class NewStoryForm extends React.Component {
       },
       //set body, stringify JSON
       body: JSON.stringify({
-        prompt,
-        author,
-        text
+        story: {
+          prompt_id: 1,
+          text: this.state.text
+        }
       })
     })
     .then(response => response.json())
@@ -59,10 +59,12 @@ class NewStoryForm extends React.Component {
   render() {
     //set some abstract consts here for access
     console.log("new story state", this.state)
-    const {prompt, author, text} = this.state
+    const {text} = this.state
     return (
       <div>
-        <Timer />
+        <Timer
+          submitFunction={this.handleSubmit}
+        />
         <h3>Write a new story!</h3>
         <div>
           <PromptIndex
@@ -72,14 +74,6 @@ class NewStoryForm extends React.Component {
         <Form onSubmit={this.handleSubmit}>
 
           <Form.Group widths="equal">
-            <Form.Input
-              fluid
-              label="Author"
-              placeholder="Who are you?"
-              name="author"
-              value={author}
-              onChange={this.handleChange}
-            />
             <Form.TextArea
 
               label=""

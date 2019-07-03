@@ -25,6 +25,8 @@ class StoryIndex extends React.Component{
   }
   //add new story
   addStory = story => {
+    console.log(this.state.storyCollection)
+    console.log(story)
     this.setState({
       storyCollection: [...this.state.storyCollection, story]
     })
@@ -39,6 +41,9 @@ class StoryIndex extends React.Component{
         <h1>Stories</h1>
         <StoryCollection
           stories={this.state.storyCollection}
+        />
+        <NewStoryForm
+          addStory={this.addStory}
         />
 
       </div>
