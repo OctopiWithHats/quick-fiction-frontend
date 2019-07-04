@@ -88,7 +88,7 @@ class NewStoryForm extends React.Component {
           <Form.Group widths="equal">
             <Form.TextArea
               id="textBox"
-              readOnly={this.state.isReadOnly}
+              readOnly={false}
               label=""
               placeholder="Write your story here"
               name="text"

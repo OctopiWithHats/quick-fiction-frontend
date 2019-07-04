@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 class Timer extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       seconds: 59,
     }
@@ -23,13 +23,18 @@ class Timer extends Component {
   }
 
   whatShows = () => {
+    const storyBox = document.getElementById("textBox")
     if(this.state.seconds === 0){
+      //storyBox.readOnly=true
+      //storyBox.contentEditable=false
+      //this.props.submitFunction()
       return(
         <div id="timeUp">
           <h2 className="stopTime">Time's Up!</h2>
         </div>
       )
     } else {
+      //storyBox.readOnly="false"
       return(
         <div>
           <h2>{this.state.seconds}</h2>
