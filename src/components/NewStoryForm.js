@@ -1,10 +1,104 @@
 import React from 'react'
+import { Form } from 'semantic-ui-react'
+import PromptIndex from '../containers/PromptIndex'
+
+import Timer from './Timer'
+
+// const beginningAPI = 'http://localhost:3000/beginnings'
+// const endingAPI = 'http://localhost:3000/endings'
 
 class NewStoryForm extends React.Component {
+  constructor(props) {
+    super(props)
 
-  render(){
-    return(
-      <h1>This is the new story page</h1>
+    this.state = this.getInitialState()
+  }
+
+  //assigning initial state outside constructor (sort of) allows to access in different places
+  getInitialState = (props) => ({
+    //prompt: '',
+    text: '',
+    isReadOnly: false
+  })
+
+  //handle change
+  handleChange = (event, {name, value}) => {
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleInteract = () => {
+    let timeUp = document.getElementById("timeUp")
+    let textBox = document.getElementById("textBox")
+    if(timeUp){
+      console.log("readable?", this.state.isReadOnly)
+    }
+    console.log("read only?", this.state.isReadOnly)
+  }
+
+  //handle submit
+  handleSubmit = event => {
+    //don't forget to prevent default for forms
+    event.preventDefault()
+    //set const for state for easier value access
+    const {text} = this.state
+    //fetch request method post
+    fetch('http://localhost:3000/stories', {
+      //method post
+      method: 'POST',
+      //set headers
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      //set body, stringify JSON
+      body: JSON.stringify({
+        story: {
+          prompt_id: 1,
+          text: this.state.text
+        }
+      })
+    })
+    .then(response => response.json())
+    .then(story => this.props.addStory(story))
+    //reset state
+    this.setState(this.getInitialState())
+  }
+
+  render() {
+    //set some abstract consts here for access
+    console.log("new story state", this.state)
+    const {text} = this.state
+    return (
+      <div>
+        <h3>Write a new story!</h3>
+        <Timer
+          submitFunction={this.handleSubmit}
+        />
+        <div>
+          <PromptIndex
+            handleChange={this.handleChange}
+          />
+        </div>
+        <Form onSubmit={this.handleSubmit}>
+
+          <Form.Group widths="equal">
+            <Form.TextArea
+              id="textBox"
+              readOnly={this.state.isReadOnly}
+              label=""
+              placeholder="Write your story here"
+              name="text"
+              value={text}
+              onChange={this.handleChange}
+            />
+
+
+          </Form.Group>
+          <Form.Button>Submit</Form.Button>
+        </Form>
+      </div>
     )
   }
 }

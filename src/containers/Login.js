@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import Profile from '../components/Profile'
+
+const URL = 'http://localhost:3000/api/v1/users/sign_in'
 
 class Login extends React.Component {
   constructor() {
@@ -17,15 +22,34 @@ class Login extends React.Component {
     })
   }
 
-  handleSubmit = event => {
-    event.preventDefault()
-    if(!this.state.username || !this.state.password) return
-    this.props.handleLogin(this.state)
+  formSubmit = (e) =>{
+      e.preventDefault()
+      console.log(this.state)
+      fetch(URL,{
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(this.state)
+      }).then(resp => resp.json())
+        .then(data => {
+            localStorage.setItem('token', data.token)
+            this.props.redirect('logged in')
+              console.log('this is sign in data',data)
+        })
+  }//end of form submit
+
+  componentDidMount = ()=> {
+      if (!!localStorage.getItem('token')){
+          this.props.redirect('logged in')
+      } else{
+          this.props.redirect('logged out')
+      }
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.formSubmit}>
         <div>
           <label>
             Username

@@ -7,6 +7,8 @@ import Login from './containers/Login'
 import Profile from './components/Profile'
 import NavBar from './containers/NavBar'
 import StoryIndex from './containers/StoryIndex'
+import Timer from './components/Timer'
+import PromptIndex from './containers/PromptIndex'
 
 
 class App extends React.Component {

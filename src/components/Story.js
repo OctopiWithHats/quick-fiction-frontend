@@ -1,13 +1,16 @@
 import React from 'react'
+import Prompt from './Prompt'
 
 class Story extends React.Component{
   //constructor
   constructor(props){
     super(props)
     this.state = {
-      author: this.props.story.user,
+      promptBeginning: this.props.story.beginning,
+      promptEnding: this.props.story.ending,
+      //author: this.props.story.author,
       text: this.props.story.text,
-      prompt: this.props.story.prompt
+      //prompt: this.props.story.prompt
     }
   }
 
@@ -15,9 +18,10 @@ class Story extends React.Component{
   render(){
     return(
       <div>
-        <h2>{this.state.author}</h2>
-        <h3>{this.state.prompt}</h3>
+        <h2>{this.state.promptBeginning} {this.state.promptEnding}</h2>
         <p>{this.state.text}</p>
+        <button>This will be a like button</button>
+        <p>-----------------</p>
       </div>
     )
   }
