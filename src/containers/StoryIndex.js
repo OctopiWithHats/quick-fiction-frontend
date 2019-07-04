@@ -39,13 +39,12 @@ class StoryIndex extends React.Component{
     return(
       <div>
         <h1>Stories</h1>
-        <StoryCollection
-          stories={this.state.storyCollection}
-        />
         <NewStoryForm
           addStory={this.addStory}
         />
-
+        <StoryCollection
+          stories={this.state.storyCollection}
+        />
       </div>
     )
 

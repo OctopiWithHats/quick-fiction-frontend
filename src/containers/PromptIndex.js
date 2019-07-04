@@ -72,9 +72,7 @@ class PromptIndex extends React.Component{
         <Prompt
           beginning={this.state.beginning}
           ending={this.state.ending}
-          handleChange={this.props.handleChange}
         />
-
       </div>
     )
 

@@ -18,6 +18,7 @@ class NewStoryForm extends React.Component {
   getInitialState = (props) => ({
     //prompt: '',
     text: '',
+    isReadOnly: false
   })
 
   //handle change
@@ -25,6 +26,15 @@ class NewStoryForm extends React.Component {
     this.setState({
       [name]: value
     })
+  }
+
+  handleInteract = () => {
+    let timeUp = document.getElementById("timeUp")
+    let textBox = document.getElementById("textBox")
+    if(timeUp){
+      console.log("readable?", this.state.isReadOnly)
+    }
+    console.log("read only?", this.state.isReadOnly)
   }
 
   //handle submit
@@ -62,10 +72,10 @@ class NewStoryForm extends React.Component {
     const {text} = this.state
     return (
       <div>
+        <h3>Write a new story!</h3>
         <Timer
           submitFunction={this.handleSubmit}
         />
-        <h3>Write a new story!</h3>
         <div>
           <PromptIndex
             handleChange={this.handleChange}
@@ -75,7 +85,8 @@ class NewStoryForm extends React.Component {
 
           <Form.Group widths="equal">
             <Form.TextArea
-
+              id="textBox"
+              readOnly={this.state.isReadOnly}
               label=""
               placeholder="Write your story here"
               name="text"

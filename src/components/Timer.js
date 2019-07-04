@@ -25,9 +25,9 @@ class Timer extends Component {
   whatShows = () => {
     if(this.state.seconds === 0){
       return(
-        <button onSubmit={this.props.handleSubmit}>
-          <h2>Time's Up!</h2>
-        </button>
+        <div id="timeUp">
+          <h2 className="stopTime">Time's Up!</h2>
+        </div>
       )
     } else {
       return(
