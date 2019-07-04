@@ -2,6 +2,7 @@ import React from 'react'
 //import NewStoryForm from './NewStoryForm'
 import { Form } from 'semantic-ui-react'
 
+
 class Prompt extends React.Component{
   //constructor
   constructor(props){

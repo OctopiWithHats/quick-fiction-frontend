@@ -1,6 +1,7 @@
 import React from 'react'
 import StoryCollection from './StoryCollection'
 import NewStoryForm from '../components/NewStoryForm'
+//import PromptIndex from './PromptIndex'
 
 const API = 'http://localhost:3000/stories'
 
