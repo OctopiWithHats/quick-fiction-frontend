@@ -39,7 +39,7 @@ class StoryIndex extends React.Component{
 
     return(
       <div>
-        <h1>Stories</h1>
+        <h1>Quick Fiction</h1>
         <NewStoryForm
           addStory={this.addStory}
         />

@@ -65,7 +65,7 @@ class PromptIndex extends React.Component{
   //render
   render(){
 
-    console.log(this.state)
+    //console.log(this.state)
 
     return(
       <div>

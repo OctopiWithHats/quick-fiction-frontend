@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-//import NewStoryForm from './NewStoryForm'
 
 class Timer extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      seconds: 59,
+      seconds: 10,
     }
   }
 
@@ -25,9 +24,10 @@ class Timer extends Component {
   whatShows = () => {
     const storyBox = document.getElementById("textBox")
     if(this.state.seconds === 0){
-      //storyBox.readOnly=true
-      //storyBox.contentEditable=false
-      //this.props.submitFunction()
+      storyBox.readOnly=true
+      storyBox.style={
+        background: 'black'
+      }
       return(
         <div id="timeUp">
           <h2 className="stopTime">Time's Up!</h2>

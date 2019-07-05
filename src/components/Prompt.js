@@ -35,13 +35,13 @@ class Prompt extends React.Component{
     // console.log("complete at random function", complete)
     // return `${complete}`
     let complete = `${this.props.beginning.word} ${this.props.ending.word}`
-    console.log("complete from function", complete)
+    //console.log("complete from function", complete)
     return complete
   }
 
   render(){
-    console.log("prompt props", this.props)
-    console.log("complete prompt", this.renderCompletePrompt())
+  //  console.log("prompt props", this.props)
+  //  console.log("complete prompt", this.renderCompletePrompt())
     return(
       <div id="prompt">
         <h3>{this.renderCompletePrompt()}</h3>
