@@ -22,7 +22,7 @@ class Story extends React.Component{
 
     fetch('http://localhost:3000/stories', {
       //method post
-      method: 'POST',
+      method: 'PATCH',
       //set headers
       headers: {
         'Content-Type': 'application/json',

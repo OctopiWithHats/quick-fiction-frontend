@@ -94,6 +94,11 @@ class NewStoryForm extends React.Component {
     this.setState(this.getInitialState())
   }
 
+  reloadPage = event => {
+    //let location = 'http://localhost:3000/stories'
+    window.location.reload(true)
+  }
+
   render() {
     //set some abstract consts here for access
     //console.log("new story state", this.state)
@@ -126,7 +131,11 @@ class NewStoryForm extends React.Component {
 
 
           </Form.Group>
-          <Form.Button>Submit</Form.Button>
+          <Form.Button
+            onClick={this.reloadPage}
+          >
+            Submit
+          </Form.Button>
         </Form>
       </div>
     )
