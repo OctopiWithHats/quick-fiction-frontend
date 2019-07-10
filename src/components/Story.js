@@ -17,11 +17,11 @@ class Story extends React.Component{
 
   //add like
   addLike = (props) => {
-    console.log(this.props.likes)
+    console.log(this.props.story.likes)
     this.setState({
-      likes: this.props.likes + 1
+      likes: this.props.story.likes + 1
     })
-    console.log(this.props.likes)
+    console.log(this.props.story.likes)
   }
 
   handleLikes = (event) => {
@@ -32,7 +32,7 @@ class Story extends React.Component{
 
     fetch('http://localhost:3000/stories/:id', {
       //method post
-      method: 'PATCH',
+      method: 'PUT',
       //set headers
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ class Story extends React.Component{
       })
     })
     .then(response => response.json())
-    .then(story => this.addLike)
+    .then(story => this.addLike())
   }
 
   //render
@@ -56,13 +56,27 @@ class Story extends React.Component{
         style={{
           background: '#B9FAF8',
           border: '5px inset #E5E7E6',
-          padding: '5px'
+          padding: '15px',
+          textAlign: 'left'
         }}
       >
         <Card.Group>
-        <Card>
+          <Card>
             <Card.Content >
-              <Card.Header>{this.state.author}</Card.Header>
+              <Card.Header
+                style={{
+                  fontWeight: 'bold'
+                }}
+              >
+                {this.state.author}
+              </Card.Header>
+
+            </Card.Content>
+            <Card.Content extra
+              style={{
+                padding: '10px'
+              }}
+            >
               <Card.Description>{this.state.text}</Card.Description>
             </Card.Content>
 

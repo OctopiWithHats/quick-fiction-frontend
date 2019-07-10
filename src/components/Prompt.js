@@ -21,9 +21,7 @@ class Prompt extends React.Component{
   render(){
     return(
       <div id="prompt"
-        style={{
-          padding: '0px'
-        }}
+
       >
         <h2>{this.renderCompletePrompt()}</h2>
       </div>

@@ -30,24 +30,13 @@ class Timer extends Component {
         overflow: 'scroll'
       }
       return(
-        <div id="timeUp"
-          style={{
-            position: 'absolute',
-            top: '25%'
-          }}
-        >
+        <div id="timeUp">
           <h1 className="stopTime">Time's Up!</h1>
         </div>
       )
     } else {
       return(
-        <div
-          style={{
-            position: 'absolute',
-            left: '40%',
-            top: '25%'
-          }}
-        >
+        <div>
           <h1>{this.state.seconds}</h1>
         </div>
       )
@@ -59,7 +48,8 @@ class Timer extends Component {
     return(
       <div
         style={{
-          margin: '10px',
+          position: 'relative',
+          top: '18%'
         }}
       >
         <h3>{this.whatShows()}</h3>

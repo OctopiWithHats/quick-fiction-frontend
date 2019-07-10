@@ -19,14 +19,15 @@ class StoryCollection extends React.Component{
     return(
       <div
         style={{
-          position: 'absolute',
-          bottom: '0px',
+          position: 'relative',
+          top: '175px',
+          left:'50px',
           width: '93%',
-          height: '350px',
+          height: '345px',
           overflow: 'scroll'
         }}
       >
-        <Card.Group itemsPerRow={3}>
+        <Card.Group>
           {this.props.stories.map(story => (
             <Story
               key={story.id}
