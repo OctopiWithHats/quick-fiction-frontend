@@ -1,6 +1,7 @@
 import React from 'react'
 import StoryCollection from './StoryCollection'
 import NewStoryForm from '../components/NewStoryForm'
+//import PromptIndex from './PromptIndex'
 
 const API = 'http://localhost:3000/stories'
 
@@ -37,8 +38,17 @@ class StoryIndex extends React.Component{
     console.log(this.state.storyCollection)
 
     return(
-      <div>
-        <h1>Stories</h1>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center'
+        }}
+      >
+        <h1>Quick Fiction</h1>
+        <p>--One-minute stories--</p>
+
         <NewStoryForm
           addStory={this.addStory}
         />

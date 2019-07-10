@@ -2,6 +2,7 @@ import React from 'react'
 //import NewStoryForm from './NewStoryForm'
 import { Form } from 'semantic-ui-react'
 
+
 class Prompt extends React.Component{
   //constructor
   constructor(props){
@@ -11,39 +12,20 @@ class Prompt extends React.Component{
     // }
   }
 
-  // renderRandomBeginning = () => {
-  //   if(this.props.beginning){
-  //     //console.log(this.props.randomBeginning.word)
-  //     return(
-  //       <span>{this.props.beginning.word}</span>
-  //     )
-  //   }
-  // }
-  //
-  // renderRandomEnding = () => {
-  //   if(this.props.ending){
-  //     //console.log(this.props.randomBeginning.word)
-  //     return(
-  //       <span>{this.props.ending.word}</span>
-  //     )
-  //   }
-  // }
-
   renderCompletePrompt = () => {
-    // let complete = `${this.renderRandomBeginning()} ${this.renderRandomEnding()}`
-    // console.log("complete at random function", complete)
-    // return `${complete}`
     let complete = `${this.props.beginning.word} ${this.props.ending.word}`
-    console.log("complete from function", complete)
+    //console.log("complete from function", complete)
     return complete
   }
 
   render(){
-    console.log("prompt props", this.props)
-    console.log("complete prompt", this.renderCompletePrompt())
     return(
-      <div id="prompt">
-        <h3>{this.renderCompletePrompt()}</h3>
+      <div id="prompt"
+        style={{
+          padding: '0px'
+        }}
+      >
+        <h2>{this.renderCompletePrompt()}</h2>
       </div>
     )
   }

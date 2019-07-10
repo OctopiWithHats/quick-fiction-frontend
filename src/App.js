@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+//import ReactDOM from 'react-dom'
 //import { BrowswerRouter as Router, Route } from 'react-router-dom'
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
+//import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import './App.css';
-import Login from './containers/Login'
-import Profile from './components/Profile'
+//import Login from './containers/Login'
+//import Profile from './components/Profile'
 import NavBar from './containers/NavBar'
-import StoryIndex from './containers/StoryIndex'
-import Timer from './components/Timer'
-import PromptIndex from './containers/PromptIndex'
+//import StoryIndex from './containers/StoryIndex'
+//import Timer from './components/Timer'
+//import PromptIndex from './containers/PromptIndex'
 
 
 class App extends React.Component {

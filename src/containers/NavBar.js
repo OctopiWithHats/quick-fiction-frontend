@@ -9,23 +9,18 @@ class NavBar extends React.Component{
     return(
       <div>
 
-        <NavLink
-          to="/stories"
-          exact
+        <h1
           style={{
-            width: '100px',
+            width: '100%',
             padding: '12px',
             margin: '0 6px 6px',
-            background: 'blue',
+            background: 'white',
             textDecoration: 'none',
             color: 'white'
           }}
-          activeStyle={{
-            background: 'darkblue'
-          }}
         >
-          Stories
-        </NavLink>
+
+        </h1>
       </div>
     )
   }
