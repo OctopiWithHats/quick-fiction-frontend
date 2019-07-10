@@ -14,30 +14,41 @@ class Timer extends Component {
       this.setState({
         //seconds: --this.state.seconds
         seconds: this.state.seconds === 0 ? 0 : --this.state.seconds
-        // seconds: this.state.seconds < 1 ? 59 : --this.state.seconds,
-        //
-        // minutes: this.state.seconds === 0 ? --this.state.minutes : this.state.minutes
       })
     }, 1000)
   }
 
   whatShows = () => {
-    const storyBox = document.getElementById("textBox")
+    let storyBox = document.getElementById("textBox")
     if(this.state.seconds === 0){
       storyBox.readOnly=true
       storyBox.style={
-        background: 'black'
+        background: 'black',
+        height: '40px',
+        width: '95%',
+        margin: '0 10px 10px',
+        overflow: 'scroll'
       }
       return(
-        <div id="timeUp">
-          <h2 className="stopTime">Time's Up!</h2>
+        <div id="timeUp"
+          style={{
+            position: 'absolute',
+            top: '25%'
+          }}
+        >
+          <h1 className="stopTime">Time's Up!</h1>
         </div>
       )
     } else {
-      //storyBox.readOnly="false"
       return(
-        <div>
-          <h2>{this.state.seconds}</h2>
+        <div
+          style={{
+            position: 'absolute',
+            left: '40%',
+            top: '25%'
+          }}
+        >
+          <h1>{this.state.seconds}</h1>
         </div>
       )
     }
@@ -46,8 +57,12 @@ class Timer extends Component {
 
   render(){
     return(
-      <div>
-        <h2>{this.whatShows()}</h2>
+      <div
+        style={{
+          margin: '10px',
+        }}
+      >
+        <h3>{this.whatShows()}</h3>
       </div>
     )
   }

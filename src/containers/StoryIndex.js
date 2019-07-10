@@ -38,8 +38,17 @@ class StoryIndex extends React.Component{
     console.log(this.state.storyCollection)
 
     return(
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center'
+        }}
+      >
         <h1>Quick Fiction</h1>
+        <p>--One-minute stories--</p>
+
         <NewStoryForm
           addStory={this.addStory}
         />
