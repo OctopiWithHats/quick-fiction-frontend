@@ -95,25 +95,23 @@ class NewStoryForm extends React.Component {
           position: 'absolute',
           left: '50px',
           width: '33%',
-          height: '180px',
+          height: '150px',
+          top: '145px',
           border: '5px solid black',
           background: '#B298DC'
         }}
       >
         <h1
           style={{
-            position: 'absolute',
-            left: '35%',
-            padding: '0px',
-            margin: '5px',
-            alignment: 'center'
+            position: 'relative',
+            alignment: 'center',
+            top: '-10px'
           }}
         >Prompt:</h1>
         <div
           style={{
             position: 'relative',
-            left: '33%',
-            top: '30%'
+            bottom: '20px'
           }}
         >
           <PromptIndex />
@@ -121,9 +119,10 @@ class NewStoryForm extends React.Component {
         <button
           onClick={this.reloadPage}
           style={{
-            position: 'absolute',
-            left: '40%',
-            top: '75%'
+            position: 'relative',
+            bottom: '20px',
+            height: '35px',
+            width: '100px'
           }}
         >
           New Prompt
@@ -134,7 +133,8 @@ class NewStoryForm extends React.Component {
             position: 'absolute',
             left: '42%',
             width: '15%',
-            height: '180px',
+            height: '150px',
+            top: '145px',
             border: '5px solid black',
             background: '#B298DC'
           }}
@@ -148,21 +148,32 @@ class NewStoryForm extends React.Component {
             position: 'absolute',
             right: '50px',
             width: '33%',
-            height: '180px',
+            height: '150px',
+            top: '145px',
             border: '5px solid black',
             background: '#B298DC'
           }}
         >
-          <h2 style={{margin:'0 10px 10px'}}>Write your story here!</h2>
+          <h2 style={{margin:'0 10px 10px'}}>
+            Write your story here!
+          </h2>
           <Form
             onSubmit={this.handleSubmit}
           >
-            <h3 style={{margin: '0 10px 10px'}}>Author:</h3>
+            <h3
+              style={{
+                position: 'relative',
+                textAlign: 'left',
+                margin: '0 10px 10px'
+              }}
+            >
+              Author:
+            </h3>
             <Form.Input
               style={{
                 position: 'relative',
-                top: '-30px',
-                left: '85px',
+                right: '85px',
+                bottom: '30px'
               }}
               readOnly={false}
               placeholder="Anonymous"
@@ -174,9 +185,8 @@ class NewStoryForm extends React.Component {
               id="textBox"
               style={{
                 position: 'relative',
-                width: '445px',
-                left: '10px',
-                top: '-10px',
+                width: '435px',
+                bottom: '15px',
                 background: this.state.backgroundColor,
                 color: this.state.textColor,
                 overflow: 'scroll'
@@ -192,7 +202,11 @@ class NewStoryForm extends React.Component {
               onClick={this.reloadPage}
               style={{
                 position: 'relative',
-                right: '-5%',
+                left: '176px',
+                bottom: '125px',
+                height: '35px',
+                width: '85px',
+                fontSize: '15px'
               }}
             >
               Submit

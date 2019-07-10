@@ -40,14 +40,20 @@ class StoryIndex extends React.Component{
     return(
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center'
+          width: '100%',
+          textAlign: 'center'
         }}
       >
-        <h1>Quick Fiction</h1>
-        <p>--One-minute stories--</p>
+        <h1
+          style={{
+            textShadow: '2px 2px #E2E4F6',
+            textDecoration: 'underline overline dotted red',
+            fontVariant: 'small-caps',
+            fontSize: '50px'
+          }}
+        >
+          Quick Fiction
+        </h1>
 
         <NewStoryForm
           addStory={this.addStory}
