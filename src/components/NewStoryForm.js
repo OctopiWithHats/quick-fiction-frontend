@@ -96,7 +96,7 @@ class NewStoryForm extends React.Component {
           left: '50px',
           width: '33%',
           height: '150px',
-          top: '145px',
+          top: '130px',
           border: '5px solid black',
           background: '#B298DC'
         }}
@@ -122,7 +122,8 @@ class NewStoryForm extends React.Component {
             position: 'relative',
             bottom: '20px',
             height: '35px',
-            width: '100px'
+            width: '100px',
+            fontSize: '14px'
           }}
         >
           New Prompt
@@ -134,7 +135,7 @@ class NewStoryForm extends React.Component {
             left: '42%',
             width: '15%',
             height: '150px',
-            top: '145px',
+            top: '130px',
             border: '5px solid black',
             background: '#B298DC'
           }}
@@ -149,7 +150,7 @@ class NewStoryForm extends React.Component {
             right: '50px',
             width: '33%',
             height: '150px',
-            top: '145px',
+            top: '130px',
             border: '5px solid black',
             background: '#B298DC'
           }}
@@ -172,7 +173,7 @@ class NewStoryForm extends React.Component {
             <Form.Input
               style={{
                 position: 'relative',
-                right: '85px',
+                right: '75px',
                 bottom: '30px'
               }}
               readOnly={false}

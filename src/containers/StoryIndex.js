@@ -29,7 +29,7 @@ class StoryIndex extends React.Component{
     console.log(this.state.storyCollection)
     console.log(story)
     this.setState({
-      storyCollection: [...this.state.storyCollection, story]
+      storyCollection: [story, ...this.state.storyCollection]
     })
   }
 
@@ -41,15 +41,17 @@ class StoryIndex extends React.Component{
       <div
         style={{
           width: '100%',
-          textAlign: 'center'
+          textAlign: 'center',
+          background: '#F8F7FF'
         }}
       >
         <h1
           style={{
-            textShadow: '2px 2px #E2E4F6',
-            textDecoration: 'underline overline dotted red',
+            textShadow: '2px 2px #EEC0C6',
+            textDecoration: 'underline overline dotted #FF4242',
             fontVariant: 'small-caps',
-            fontSize: '50px'
+            fontSize: '50px',
+            color: '#0D0630'
           }}
         >
           Quick Fiction

@@ -20,7 +20,7 @@ class StoryCollection extends React.Component{
       <div
         style={{
           position: 'relative',
-          top: '175px',
+          top: '185px',
           left:'50px',
           width: '93%',
           height: '345px',
@@ -34,7 +34,7 @@ class StoryCollection extends React.Component{
               story={story}
               addLike={this.addLike}
             />
-          ))}
+          )).reverse()}
         </Card.Group>
       </div>
     )

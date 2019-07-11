@@ -52,7 +52,13 @@ class Timer extends Component {
           top: '18%'
         }}
       >
-        <h3>{this.whatShows()}</h3>
+        <h3
+          style={{
+            color: '#13070C'
+          }}
+        >
+          {this.whatShows()}
+        </h3>
       </div>
     )
   }

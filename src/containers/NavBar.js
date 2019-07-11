@@ -7,20 +7,13 @@ class NavBar extends React.Component{
   //render
   render(){
     return(
-      <div>
-
-        <h1
-          style={{
-            width: '100%',
-            padding: '12px',
-            margin: '0 6px 6px',
-            background: 'white',
-            textDecoration: 'none',
-            color: 'white'
-          }}
-        >
-
-        </h1>
+      <div
+        style={{
+          width: '100%',
+          background: '#14FFF7'
+        }}
+      >
+        <p></p>
       </div>
     )
   }
