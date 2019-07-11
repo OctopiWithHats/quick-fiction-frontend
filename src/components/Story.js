@@ -56,6 +56,7 @@ class Story extends React.Component{
         style={{
           background: '#B9FAF8',
           border: '5px inset #E5E7E6',
+          borderRadius: '5px',
           padding: '15px',
           textAlign: 'left'
         }}

@@ -98,6 +98,7 @@ class NewStoryForm extends React.Component {
           height: '150px',
           top: '130px',
           border: '5px solid black',
+          borderRadius: '5px',
           background: '#B298DC'
         }}
       >
@@ -123,7 +124,8 @@ class NewStoryForm extends React.Component {
             bottom: '20px',
             height: '35px',
             width: '100px',
-            fontSize: '14px'
+            fontSize: '14px',
+            borderRadius: '5px',
           }}
         >
           New Prompt
@@ -137,6 +139,7 @@ class NewStoryForm extends React.Component {
             height: '150px',
             top: '130px',
             border: '5px solid black',
+            borderRadius: '5px',
             background: '#B298DC'
           }}
         >
@@ -152,6 +155,7 @@ class NewStoryForm extends React.Component {
             height: '150px',
             top: '130px',
             border: '5px solid black',
+            borderRadius: '5px',
             background: '#B298DC'
           }}
         >
@@ -174,7 +178,7 @@ class NewStoryForm extends React.Component {
               style={{
                 position: 'relative',
                 right: '75px',
-                bottom: '30px'
+                bottom: '30px',
               }}
               readOnly={false}
               placeholder="Anonymous"
@@ -207,7 +211,8 @@ class NewStoryForm extends React.Component {
                 bottom: '125px',
                 height: '35px',
                 width: '85px',
-                fontSize: '15px'
+                fontSize: '15px',
+                borderRadius: '5px',
               }}
             >
               Submit
